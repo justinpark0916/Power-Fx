@@ -94,7 +94,7 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(GeneratePackageOnBuild)' == 'True'">
+  <ItemGroup Condition="('$(GeneratePackageOnBuild)' == 'True') And ('$(Project)'!='Microsoft.PowerFx.Performance.Tests')">
     <None Include="icon.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
