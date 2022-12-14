@@ -5,10 +5,9 @@ using BenchmarkDotNet.Running;
 
 namespace Microsoft.PowerFx.Performance.Tests
 {
-
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             /*
              * 
@@ -19,7 +18,13 @@ namespace Microsoft.PowerFx.Performance.Tests
              *              
              */
 
-            var summary = BenchmarkRunner.Run<PerformanceTest1>();
+            //// reference for benchmarks
+            //var reference = BenchmarkRunner.Run<ReferenceTest>();
+
+            //// list of tests
+            //var summary = BenchmarkRunner.Run<PerformanceTest1>();
+
+            BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args);
         }
     }
 }
