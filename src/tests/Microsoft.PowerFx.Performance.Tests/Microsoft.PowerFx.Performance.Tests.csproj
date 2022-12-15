@@ -1,14 +1,13 @@
-﻿<Project Sdk="Microsoft.NET.Sdk;Microsoft.NET.Sdk.Publish">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>           
+    <OutputType>Exe</OutputType>
     <TargetFramework Condition="'$(BuildTarget)' == 'netcoreapp31'">netcoreapp3.1</TargetFramework>
     <TargetFrameworks Condition="'$(BuildTarget)' == ''">netcoreapp3.1</TargetFrameworks>
     <Configurations>Debug;Release</Configurations>
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
     <StartupObject>Microsoft.PowerFx.Performance.Tests.Program</StartupObject>
     <LangVersion>9.0</LangVersion>
-    <AssemblyName>Microsoft.PowerFx.Performance.Benchmarks</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)'!='Debug' or '$(TURN_OFF_WARNING_AS_ERROR)'!='True' ">
@@ -34,6 +33,16 @@
   <ItemGroup>
     <ProjectReference Include="..\..\libraries\Microsoft.PowerFx.Core\Microsoft.PowerFx.Core.csproj" />
     <ProjectReference Include="..\..\libraries\Microsoft.PowerFx.Interpreter\Microsoft.PowerFx.Interpreter.csproj" />
-  </ItemGroup>  
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="global.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
 
 </Project>

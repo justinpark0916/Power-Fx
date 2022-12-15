@@ -1,0 +1,7 @@
+{
+  "sdk": {
+    // You can check version with 'dotnet --list-sdks'
+    "version": "6.0.307",
+    "rollForward": "latestFeature"
+  }
+}

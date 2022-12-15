@@ -8,7 +8,6 @@ using System.Threading;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Diagnostics.Windows.Configs;
 using BenchmarkDotNet.Engines;
-using Microsoft.PowerFx.Core.Tests;
 using Microsoft.PowerFx.Syntax;
 
 namespace Microsoft.PowerFx.Performance.Tests
@@ -16,8 +15,14 @@ namespace Microsoft.PowerFx.Performance.Tests
     [EtwProfiler]
     [CsvExporter]
     [MinColumn, Q1Column, MeanColumn, Q3Column, MaxColumn]
-    public class ReferenceTest : PowerFxTest
+    public class ReferenceTest
     {
+        [GlobalSetup]
+        public void GlobalSetup()
+        {
+            CultureInfo.CurrentCulture = new CultureInfo("en-US");
+        }
+
         [Benchmark]
         [MethodImpl(MethodImplOptions.NoOptimization | MethodImplOptions.NoInlining)]
         public int Reference1()
