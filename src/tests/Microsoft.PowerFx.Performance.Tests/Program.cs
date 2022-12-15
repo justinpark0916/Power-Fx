@@ -18,12 +18,6 @@ namespace Microsoft.PowerFx.Performance.Tests
              *              
              */
 
-            //// reference for benchmarks
-            //var reference = BenchmarkRunner.Run<ReferenceTest>();
-
-            //// list of tests
-            //var summary = BenchmarkRunner.Run<PerformanceTest1>();
-
             BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args);
         }
     }
