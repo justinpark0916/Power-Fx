@@ -190,6 +190,10 @@ namespace FunctionTestGen
                     return "DateValue(\"2022-12-19\")";
                 case DKind.DateTime:
                     return "DateTimeValue(\"2022-12-19T12:08:45.000Z\")";
+                case DKind.Color:
+                    return "ColorValue(\"#aabbccdd\")";
+                case DKind.Guid:
+                    return "GUID(\"5cc45615-f759-4a53-b225-d3a2497f60ad\")";
                 default:
                     return string.Empty;
             }
@@ -211,6 +215,10 @@ namespace FunctionTestGen
                     return "ParseJSON(\"\"\"2022-12-19\"\"\")";
                 case DKind.DateTime:
                     return "ParseJSON(\"\"\"2022-12-19T12:08:45.000Z\"\"\")";
+                case DKind.Color:
+                    return "ParseJSON(\"\"\"#aabbccdd\"\"\")";
+                case DKind.Guid:
+                    return "ParseJSON(\"\"\"5cc45615-f759-4a53-b225-d3a2497f60ad\"\"\")";
                 default:
                     return string.Empty;
             }
@@ -252,6 +260,8 @@ namespace FunctionTestGen
                 case DKind.Time:
                 case DKind.Date:
                 case DKind.DateTime:
+                case DKind.Color:
+                case DKind.Guid:
                     return true;
                 default:
                     return false;
