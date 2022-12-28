@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <PackageOutputPath>$(MSBuildThisFileDirectory)outputpackages</PackageOutputPath>
   </PropertyGroup>
 
