@@ -10,25 +10,6 @@ using Microsoft.PowerFx.Core.Types;
 
 namespace Microsoft.PowerFx.Core.Texl.Builtins
 {
-    internal sealed class ParseJSONFunction : BuiltinFunction
-    {
-        public const string ParseJSONInvariantFunctionName = "ParseJSON";
-
-        public override bool IsSelfContained => true;
-
-        public override bool SupportsParamCoercion => false;
-
-        public ParseJSONFunction()
-            : base(ParseJSONInvariantFunctionName, TexlStrings.AboutParseJSON, FunctionCategories.Text, DType.UntypedObject, 0, 1, 1, DType.String)
-        {
-        }
-
-        public override IEnumerable<TexlStrings.StringGetter[]> GetSignatures()
-        {
-            yield return new[] { TexlStrings.ParseJSONArg1 };
-        }
-    }
-
     internal sealed class IndexFunction_UO : BuiltinFunction
     {
         public const string IndexInvariantFunctionName = "Index";

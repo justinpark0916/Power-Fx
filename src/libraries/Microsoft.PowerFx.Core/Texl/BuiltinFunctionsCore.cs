@@ -141,7 +141,6 @@ namespace Microsoft.PowerFx.Core.Texl
         public static readonly TexlFunction Not = _library.Append(new NotFunction());
         public static readonly TexlFunction Now = _library.Append(new NowFunction());
         public static readonly TexlFunction Or = _library.Append(new VariadicLogicalFunction(isAnd: false));
-        public static readonly TexlFunction ParseJSON = _library.Append(new ParseJSONFunction());
         public static readonly TexlFunction Power = _library.Append(new PowerFunction());
         public static readonly TexlFunction PowerT = _library.Append(new PowerTFunction());
         public static readonly TexlFunction Pi = _library.Append(new PiFunction());
