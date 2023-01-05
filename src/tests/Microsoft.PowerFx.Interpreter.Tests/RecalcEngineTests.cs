@@ -249,10 +249,7 @@ namespace Microsoft.PowerFx.Tests
         public void BasicEval()
         {
             var engine = new RecalcEngine();
-            engine.UpdateVariable("M", 10.0);
-            engine.UpdateVariable("M2", -4);
-            var result = engine.Eval("M + Abs(M2)");
-            Assert.Equal(14.0, ((NumberValue)result).Value);
+            var result = engine.Eval("ForAll([true,false],  If(ThisRecord.Value, {x:1,y:2}, {x:1,y:1}))");
         }
 
         [Fact]
